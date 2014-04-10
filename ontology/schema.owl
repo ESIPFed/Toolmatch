@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY toolmatch "http://toolmatch.esipfed.org/schema/">
+  <!ENTITY toolmatchi "http://toolmatch.esipfed.org/instances/">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+  <!ENTITY dc "http://purl.org/dc/terms/">
+  <!ENTITY time "http://www.w3.org/2006/time#">
+  <!ENTITY twi "http://tw.rpi.edu/instances/">
+  <!ENTITY tw "http://tw.rpi.edu/schema/">
+]>
+<rdf:RDF
+    xmlns="&toolmatch;"
+    xmlns:toolmatchi="&toolmatchi;"
+    xmlns:time="&time;"
+    xmlns:foaf="&foaf;"
+    xmlns:dc="&dc;"
+    xmlns:tw="&tw;"
+    xmlns:twi="&twi;"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="&toolmatch;">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="&time;"/>
+    <owl:imports rdf:resource="&foaf;"/>
+    <rdfs:label xml:lang="en">ToolMatch Ontology and Rules</rdfs:label>
+    <rdfs:comment xml:lang="en">
+	ToolMatch is an ontology and set of rules that can help researchers
+	determine what tools can be used given a particular set of data.
+    </rdfs:comment>
+    <dc:creator rdf:resource="&twi;EricRozell"/>
+    <dc:contributor rdf:resource="&twi;PatrickWest"/>
+    <dc:contributor rdf:resource="&twi;person/NancyHoebelheinrich"/>
+    <dc:publisher rdf:resource="&twi;ESIPFederation"/>
+    <dc:date>2013-11-26</dc:date>
+    <dc:rights xml:lang="en">This ontology is distributed under a Creative Commons Attribution License http://creativecommons.org/licenses/by/3.0/</dc:rights>
+    <owl:versionInfo>v 1.0 $Revision: 9168 $ $Author: pwest $ $Date: 2013-12-05 23:12:37 -0500 (Thu, 05 Dec 2013) $</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:about="&toolmatch;Tool">
+	<rdfs:label xml:lang="en">Tool</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <MappingTool rdf:about="&toolmatchi;Panoply">
+	        <rdfs:label xml:lang="en">Panoply</rdfs:label>
+            <rdf:type rdf:resource="&toolmatch;Tool"/>
+          </MappingTool>
+          <MappingTool rdf:about="&toolmatchi;IDV">
+	        <rdfs:label xml:lang="en">IDV</rdfs:label>
+            <rdf:type rdf:resource="&toolmatch;Tool"/>
+          </MappingTool>
+          <MappingTool rdf:about="&toolmatchi;McIDAS-V">
+	        <rdfs:label xml:lang="en">McIDAS-V</rdfs:label>
+            <rdf:type rdf:resource="&toolmatch;Tool"/>
+          </MappingTool>
+          <MappingTool rdf:about="&toolmatchi;ArcGIS">
+	        <rdfs:label xml:lang="en">ArcGIS</rdfs:label>
+            <rdf:type rdf:resource="&toolmatch;Tool"/>
+          </MappingTool>
+          <Tool rdf:about="&toolmatchi;GrADS">
+	        <rdfs:label xml:lang="en">GrADS</rdfs:label>
+		  </Tool>
+          <Tool rdf:about="&toolmatchi;Ferret">
+	        <rdfs:label xml:lang="en">Ferret</rdfs:label>
+		  </Tool>
+          <Tool rdf:about="&toolmatchi;HDFView">
+	        <rdfs:label xml:lang="en">HDFView</rdfs:label>
+		  </Tool>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="&toolmatch;MappingTool">
+	<rdfs:label xml:lang="en">Mapping Tool</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <MappingTool rdf:about="&toolmatchi;Panoply"/>
+          <MappingTool rdf:about="&toolmatchi;IDV"/>
+          <MappingTool rdf:about="&toolmatchi;McIDAS-V"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="&toolmatch;Tool"/>
+  </owl:Class>
+  <owl:Class rdf:about="&toolmatch;Server">
+	<rdfs:label xml:lang="en">Server</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <Server rdf:about="&toolmatchi;GrADSDataServer">
+	        <rdfs:label xml:lang="en">GrADS Data Server</rdfs:label>
+		  </Server>
+          <Server rdf:about="&toolmatchi;Hyrax">
+		    <rdfs:label xml:lang="en">OPeNDAP Hyrax</rdfs:label>
+		  </Server>
+          <Server rdf:about="&toolmatchi;ThreddsDataServer">
+	        <rdfs:label xml:lang="en">Thredds Data Server (TDS)</rdfs:label>
+		  </Server>
+          <Server rdf:about="&toolmatchi;erddap">
+	        <rdfs:label xml:lang="en">erddap</rdfs:label>
+		  </Server>
+          <Server rdf:about="&toolmatchi;pydap">
+	        <rdfs:label xml:lang="en">pydap</rdfs:label>
+		  </Server>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="&toolmatch;DataCollection">
+	<rdfs:label xml:lang="en">Data Collection</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&toolmatch;DataConvention">
+	<rdfs:label xml:lang="en">Data Convention</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="&toolmatch;DataGridType">
+	<rdfs:label xml:lang="en">Data Grid Type</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <DataGridType rdf:about="&toolmatchi;RegularLatLonGrid">
+	        <rdfs:label xml:lang="en">Regular Lat Lon Grid</rdfs:label>
+		  </DataGridType>
+          <DataGridType rdf:about="&toolmatchi;AuxiliaryLatLonGrid">
+	        <rdfs:label xml:lang="en">Auxiliary Lat Lon Grid</rdfs:label>
+		  </DataGridType>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="&toolmatch;DataConvention"/>
+  </owl:Class>
+  <owl:Class rdf:about="&toolmatch;GriddingTool">
+	<rdfs:label xml:lang="en">Gridding Tool</rdfs:label>
+    <rdfs:subClassOf rdf:resource="&toolmatch;Tool"/>
+  </owl:Class>
+  <owl:Class rdf:about="&toolmatch;DataStorageFormat">
+	<rdfs:label xml:lang="en">Data Storage Format</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <DataStorageFormat rdf:about="&toolmatchi;NetCDF3">
+	        <rdfs:label xml:lang="en">NetCDF3</rdfs:label>
+		  </DataStorageFormat>
+          <DataStorageFormat rdf:about="&toolmatchi;NetCDF4">
+	        <rdfs:label xml:lang="en">NetCDF4</rdfs:label>
+		  </DataStorageFormat>
+          <DataStorageFormat rdf:about="&toolmatchi;HDF4">
+	        <rdfs:label xml:lang="en">HDF4</rdfs:label>
+		  </DataStorageFormat>
+          <DataStorageFormat rdf:about="&toolmatchi;HDF5">
+	        <rdfs:label xml:lang="en">HDF5</rdfs:label>
+		  </DataStorageFormat>
+          <DataStorageFormat rdf:about="&toolmatchi;GRIB">
+	        <rdfs:label xml:lang="en">GRIB</rdfs:label>
+		  </DataStorageFormat>
+          <DataStorageFormat rdf:about="&toolmatchi;HDF-EOS2">
+	        <rdfs:label xml:lang="en">HDF-EOS2</rdfs:label>
+		  </DataStorageFormat>
+          <DataStorageFormat rdf:about="&toolmatchi;HDF-EOS5">
+	        <rdfs:label xml:lang="en">HDF-EOS5</rdfs:label>
+		  </DataStorageFormat>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="&toolmatch;DataAccessFormat">
+	<rdfs:label xml:lang="en">Data Access Format</rdfs:label>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <DataAccessFormat rdf:about="&toolmatchi;OPeNDAP">
+	        <rdfs:label xml:lang="en">OPeNDAP</rdfs:label>
+		  </DataAccessFormat>
+          <DataAccessFormat rdf:about="&toolmatchi;NetCDF3"/>
+          <DataAccessFormat rdf:about="&toolmatchi;NetCDF4"/>
+          <DataAccessFormat rdf:about="&toolmatchi;WMS">
+	        <rdfs:label xml:lang="en">WMS</rdfs:label>
+		  </DataAccessFormat>
+          <DataAccessFormat rdf:about="&toolmatchi;GeoTIFF">
+	        <rdfs:label xml:lang="en">GeoTIFF</rdfs:label>
+		  </DataAccessFormat>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="&toolmatch;DataConvention">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <DataConvention rdf:about="&toolmatchi;ClimateForecast_CF">
+	        <rdfs:label xml:lang="en">Climate Forecast (CF) Convention</rdfs:label>
+		  </DataConvention>
+          <DataConvention rdf:about="&toolmatchi;CMOR_compatible">
+	        <rdfs:label xml:lang="en">CMOR Convention</rdfs:label>
+		  </DataConvention>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="&toolmatch;hasDataStorageFormat">
+	<rdfs:label xml:lang="en">hasDataStorageFormat</rdfs:label>
+    <rdfs:domain rdf:resource="&toolmatch;DataCollection"/>
+    <rdfs:range rdf:resource="&toolmatch;DataStorageFormat"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="&toolmatch;visualizedBy">
+	<rdfs:label xml:lang="en">visualizedBy</rdfs:label>
+    <rdfs:range rdf:resource="&toolmatch;Tool"/>
+    <rdfs:domain rdf:resource="&toolmatch;DataCollection"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="&toolmatch;mappedBy">
+	<rdfs:label xml:lang="en">mappedBy</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="&toolmatch;visualizedBy"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="&toolmatch;hasAccessURL">
+	<rdfs:label xml:lang="en">hasAccessURL</rdfs:label>
+    <rdfs:range rdf:resource="&toolmatch;URL"/>
+    <rdfs:domain rdf:resource="&toolmatch;DataCollection"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="&toolmatch;usesConvention">
+	<rdfs:label xml:lang="en">usesConvention</rdfs:label>
+    <rdfs:range rdf:resource="&toolmatch;DataConvention"/>
+    <rdfs:domain rdf:resource="&toolmatch;DataCollection"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="&toolmatch;isAccessedBy">
+	<rdfs:label xml:lang="en">isAccessedBy</rdfs:label>
+    <rdfs:range rdf:resource="&toolmatch;Server"/>
+    <rdfs:domain rdf:resource="&toolmatch;DataCollection"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="&toolmatch;providesAccessFormat">
+	<rdfs:label xml:lang="en">providesAccessFormat</rdfs:label>
+    <rdfs:range rdf:resource="&toolmatch;DataAccessFormat"/>
+    <rdfs:domain rdf:resource="&toolmatch;Server"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
