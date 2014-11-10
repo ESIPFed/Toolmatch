@@ -1,0 +1,7 @@
+
+{ "head": { "link": [], "vars": ["capability", "label", "description"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "capability": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/RasterGridding" }},
+    { "capability": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/RasterMapping" }},
+    { "capability": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/VectorMapping" }},
+    { "capability": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/VectorGridding" }} ] } }

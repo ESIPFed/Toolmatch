@@ -1,0 +1,7 @@
+
+{ "head": { "link": [], "vars": ["protocol", "label", "description"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "protocol": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/WCS" }},
+    { "protocol": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/WMS" }},
+    { "protocol": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/NetCDF-THREDDS" }},
+    { "protocol": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/DAP" }} ] } }

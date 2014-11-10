@@ -1,0 +1,53 @@
+a:link, a:visited {
+	color: blue;
+}
+
+a:visited {
+	color: navy;
+}
+
+.paging-panel {
+	font-size: 0.6em;
+}
+
+.ui-widget {
+	font-size: 0.8em;
+}
+
+.x-option-label {
+	cursor: pointer;
+}
+
+.widget-panel {
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 0.7em;
+}
+
+.widget-panel .result-list {
+	width: 60em;
+	margin-top: 1em;
+}
+
+.widget-panel .result-list-item {
+	padding-bottom: 6px;
+	padding-top: 5px;
+}
+
+.widget-panel .result-list-item .title {
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+.widget-panel .result-list div.result-list-item:nth-child(odd) {
+	border-bottom: 1px solid #dddde9;
+	border-top: 1px solid #dddde9;
+	background-color: #eeeefa;
+}
+
+.result-list-section-header {
+        text-align: left;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: gray;
+	margin-top: 0.8em;
+}

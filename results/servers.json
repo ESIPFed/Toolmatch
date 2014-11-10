@@ -1,0 +1,8 @@
+
+{ "head": { "link": [], "vars": ["server", "label", "description"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "server": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/ThreddsDataServer" }},
+    { "server": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/pydap" }},
+    { "server": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/erddap" }},
+    { "server": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/OPeNDAP" }},
+    { "server": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/GrADSDataserver" }} ] } }
