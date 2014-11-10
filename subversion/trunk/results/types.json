@@ -1,6 +1,0 @@
-
-{ "head": { "link": [], "vars": ["type", "label", "description"] },
-  "results": { "distinct": false, "ordered": true, "bindings": [
-    { "type": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/DesktopTool" }},
-    { "type": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/WebBasedTool" }},
-    { "type": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/DataServerTool" }} ] } }

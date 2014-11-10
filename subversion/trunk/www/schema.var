@@ -1,7 +1,0 @@
-URI: schema
-
-URI: schema.html
-Content-type: text/html
-
-URI: schema.owl
-Content-type: application/rdf+xml

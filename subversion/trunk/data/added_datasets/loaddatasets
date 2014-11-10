@@ -1,9 +1,0 @@
-#!/bin/sh
-
-for i in *
-do
-	bas=`basename $i .rdf`
-	gname="http://toolmatch.esipfed.org/datasets/graph/$bas"
-	/project/virtuoso/scripts/vdelete $gname
-	/project/virtuoso/scripts/vload rdf /project/toolmatch/toolmatch-svn/trunk/data/added_datasets/$i $gname
-done

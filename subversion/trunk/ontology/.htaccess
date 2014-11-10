@@ -1,7 +1,0 @@
-RewriteEngine On
-
-RedirectMatch permanent ^/schema.html/ /schema.html
-RewriteRule ^schema/(.+)\.(.+)$ view.php?src=schema.owl&q=$1&output=$2
-RewriteRule ^schema/(.+)$ view.php?src=schema.owl&q=$1 [L]
-RewriteRule ^schema/$ schema.var [L]
-RewriteRule ^schema$ schema.var [L]
