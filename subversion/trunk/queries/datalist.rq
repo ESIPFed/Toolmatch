@@ -1,0 +1,19 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX tw: <http://tw.rpi.edu/schema/>
+PREFIX twi: <http://tw.rpi.edu/instances/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX dc: <http://purl.org/dc/terms/>
+PREFIX doap: <http://usefulinc.com/ns/doap#>
+PREFIX data: <http://toolmatch.esipfed.org/schema#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+
+SELECT ?data ?label ?description
+WHERE
+{
+    ?data a <http://toolmatch.esipfed.org/schema#DataCollection> .
+    ?data rdfs:label ?label .
+    OPTIONAL { ?data dcat:description ?description . }
+} ORDER BY ?label

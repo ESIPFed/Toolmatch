@@ -1,0 +1,5 @@
+
+{ "head": { "link": [], "vars": ["convention", "label", "description"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "convention": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/CMOR_compatible" }},
+    { "convention": { "type": "uri", "value": "http://toolmatch.esipfed.org/instances/ClimateForecast_CF" }} ] } }

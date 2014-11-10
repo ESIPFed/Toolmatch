@@ -1,0 +1,14 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+select ?capability ?label ?description where
+{
+    ?capability rdf:type <http://toolmatch.esipfed.org/schema#VisualizeType> .
+    OPTIONAL
+    {
+        ?format rdfs:label ?label .
+        ?format dc:description ?description .
+    }
+}
+
