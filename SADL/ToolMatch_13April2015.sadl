@@ -1,0 +1,28 @@
+uri "http://sadl.org/Tools_Collections/ToolMatch_13April2015" alias Tools version "$Revision:13 April 2015$ Last modified on   $13 April 2015: $". 
+
+{DataCollection, Tool, Identifier} are classes.
+Identifier is a class must be one of {GCMDDIFEntry, DOI}.
+hasIdentifier describes DataCollection with values of type Identifier.
+DataAccessProtocol is a class must be one of {DAP,NetCDF-THREDDS,WMS,WCS}.
+DataServer is a class must be one of {errdap,pydap,OPeNDAP}.
+providesAccess describes DataServer with values of type DataAccessProtocol.
+isAccessedBy describes DataCollection with values of type DataServer.
+canUseDataServer describes Tool with values of type DataServer.
+DataFormat is a class must be one of {GRIB,HDF4,HDF5,HDF-EOS2,HDF-EOS5,NetCDF3,NetCDF4Classic,NetCDF4Enhanced,GeoTIFF,KML,DAP}.
+hasDataFormat describes DataCollection has values of type DataFormat.
+Tool is a class must be one of {ArcGIS,Ferret,GrADS,HDFView,IDV,McIDAS-V,nco,Panoply}. 
+ToolType is a type of Tool must be one of {DesktopTool, WebBasedTool, DataServerTool}.
+isOfType describes Tool with values of type ToolType. 
+visualizedBy describes DataCollection with values of type Tool.
+canUseAccessProtocol describes Tool with values of type DataAccessProtocol.
+VisualizeType is a type of Tool must be one of {VectorMapping, RasterMapping,RasterGridding, VectorGridding}.
+hasCapability describes Tool with values of type VisualizeType.
+hasInputFormat describes Tool with values of type DataFormat. 
+hasOutputFormat describes Tool with values of type DataFormat.
+visualizedBy describes DataCollection with values of type VisualizeType. 
+DataConvention is a class must be one of {ClimateForecast_CF,CMOR_compatible}. 
+usesConvention describes DataCollection with values of type DataConvention. 
+DataGridType is a type of DataConvention must be one of {RegularLatLonGrid, AuxiliaryLatLonGrid}. 
+usesConvention describes DataConvention with values of type DataGridType.
+URL is a class. 
+hasAccessURL describes DataCollection with values of type URL. 

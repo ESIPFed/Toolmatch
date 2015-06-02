@@ -1,0 +1,40 @@
+uri "http://sadl.org/Tools_Collections/ToolMatch_13April2015" alias Tools version "$Revision:13 April 2015$ Last modified on   $13 April 2015: $". 
+
+{DataCollection, Tool, Identifier} are classes.
+
+
+Class/subclass and collections:
+URL is a class. 
+DataAccessProtocol is a class must be one of {DAP,NetCDF-THREDDS,WMS,WCS}.
+DataServer is a class must be one of {errdap,pydap,OPeNDAP}.
+Identifier is a class must be one of {GCMDDIFEntry, DOI}.
+DataFormat is a class must be one of 
+{GRIB,HDF4,HDF5,HDF-EOS2,HDF-EOS5,NetCDF3,NetCDF4Classic,NetCDF4Enhanced,GeoTIFF,KML,DAP}.
+	-DataFormat hasFileType
+
+DataConvention is a class must be one of {ClimateForecast_CF,CMOR_compatible}. 
+DataGridType is a type of DataConvention must be one of {RegularLatLonGrid, AuxiliaryLatLonGrid}. 
+
+Tool is a class must be one of {ArcGIS,Ferret,GrADS,HDFView,IDV,McIDAS-V,nco,Panoply}. 
+ToolType is a type of Tool must be one of {DesktopTool, WebBasedTool, DataServerTool}.
+(i.e. ToolType is a subclass)
+VisualizeType is a type of Tool must be one of {VectorMapping, RasterMapping,RasterGridding, VectorGridding}.
+
+
+Are these all domian and range constraints?
+	-i.e. domain:DataCollection; range:Identifier (?)
+isAccessedBy describes DataCollection with values of type DataServer.
+providesAccess describes DataServer with values of type DataAccessProtocol.
+hasIdentifier describes DataCollection with values of type Identifier.
+canUseDataServer describes Tool with values of type DataServer.
+hasDataFormat describes DataCollection has values of type DataFormat.
+isOfType describes Tool with values of type ToolType. 
+visualizedBy describes DataCollection with values of type Tool.
+canUseAccessProtocol describes Tool with values of type DataAccessProtocol.
+hasCapability describes Tool with values of type VisualizeType.
+hasInputFormat describes Tool with values of type DataFormat. 
+hasOutputFormat describes Tool with values of type DataFormat.
+visualizedBy describes DataCollection with values of type VisualizeType. 
+usesConvention describes DataCollection with values of type DataConvention. 
+usesConvention describes DataConvention with values of type DataGridType.
+hasAccessURL describes DataCollection with values of type URL. 
